@@ -1,0 +1,314 @@
+/* Estilo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url("../img/fons_mari.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Barra de navegación */
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.8);
+    padding: 10px 20px; /* Reduce el padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px; /* Reduce la altura */
+}
+
+.navbar a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffdd57;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Imagen de perfil en el header */
+.navbar .avatar {
+    width: 40px; /* Tamaño reducido */
+    height: 40px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Contenedor principal */
+.container {
+    margin-top: 80px; /* Para dejar espacio a la barra de navegación */
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulario de ordenación */
+.order-form {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.order-form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+
+.order-form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    color: #333;
+    appearance: none; /* Eliminar el estilo por defecto del navegador */
+    -webkit-appearance: none; /* Eliminar el estilo por defecto en Safari */
+    -moz-appearance: none; /* Eliminar el estilo por defecto en Firefox */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+.order-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Estilo para la barra de búsqueda */
+.search-form {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de los artículos */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    background-color: #f1faff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.article h2 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.article p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Estilo de los botones de acción de los artículos */
+.article-actions {
+    margin-top: 15px;
+}
+
+.article-actions .button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.article-actions .button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.article-actions .button.delete-article {
+    background-color: #dc3545;
+}
+
+.article-actions .button.delete-article:hover {
+    background-color: #c82333;
+}
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pagination a:active {
+    background-color: #004494;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-info {
+    font-weight: bold;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.insert-button {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.insert-button-bottom {
+    text-align: left;
+    margin-top: 40px; /* Añadir margen superior para separar del grupo de imágenes */
+    margin-bottom: 20px;
+}
+
+.button.insert-article {
+    background-color: #007bff; /* Azul similar al navbar */
+    color: #fff; /* Texto blanco */
+    padding: 12px 25px; /* Espaciado más amplio */
+    border: none;
+    border-radius: 30px; /* Bordes redondeados para un aspecto moderno */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: all 0.3s ease; /* Animación de transición suave */
+    cursor: pointer;
+    display: inline-block;
+}
+
+.button.insert-article:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button.insert-article:active {
+    background-color: #004494;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del mensaje de no hay artículos */
+.no-articles {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 20px;
+}
+
+.user-avatar, .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Imagen en la sección Editar Perfil */
+.edit-profile-container .profile-image {
+    width: 150px; /* Tamaño de imagen en el perfil */
+    height: 150px;
+    border-radius: 50%; /* Enmarcado circular */
+    object-fit: cover;
+    border: 5px solid #007bff; /* Añade borde azul */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    margin-bottom: 20px; /* Espaciado con el resto del contenido */
+}
