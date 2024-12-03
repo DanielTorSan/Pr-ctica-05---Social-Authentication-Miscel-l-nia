@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $_SESSION['user_id'] = $user['id']; // Configurar l'ID de l'usuari a la sessió
             $_SESSION['user'] = $username;
+            $_SESSION['role'] = $user['role']; // Guardar el rol del usuario en la sesión
 
             if ($rememberMe) {
                 // Generar un token únic

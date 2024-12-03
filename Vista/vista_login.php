@@ -36,9 +36,9 @@
         <button type="submit" class="button">Iniciar Sessió</button>
     </form>
 
-    <a href="registre.php" class="button">Registrar-se</a>
+    <a href="../Vista/vista_registre.php" class="button">Registrar-se</a>
     <a href="recover_password.php" class="button">Recuperar Contrasenya</a>
-    <a href="../index.php">Tornar a l'inici</a>
+    <a href="../index.php" class="button">Tornar a l'inici</a>
 </div>
 
 </body>

@@ -29,6 +29,7 @@ $_SESSION['last_activity'] = time();
 $loggedIn = isset($_SESSION['user']);
 $usuari = $loggedIn ? $_SESSION['user'] : null;
 $user_id = $_SESSION['user_id'] ?? null;
+$isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
 $articlesPerPagina = 5;
 $paginaActual = $_GET['pagina'] ?? 1;
@@ -134,7 +135,7 @@ $searchNotFound = empty($articles) && $search;
                     <img src="<?php echo htmlspecialchars('uploads/' . $article['imatge']); ?>" alt="Imatge de <?php echo htmlspecialchars($article['titol']); ?>" class="article-image">
                     <h2><?php echo htmlspecialchars($article['titol'] ?? 'Títol no disponible'); ?></h2>
                     <p><?php echo htmlspecialchars($article['cos'] ?? 'Contingut no disponible'); ?></p>
-                    <?php if ($loggedIn && $article['created_by'] == $user_id): ?>
+                    <?php if ($loggedIn && ($isAdmin || $article['created_by'] == $user_id)): ?>
                         <div class="article-actions">
                             <a href="Controlador/modificar.php?id=<?php echo $article['ID']; ?>" class="button edit-article">Editar</a>
                             <a href="Controlador/esborrar.php?id=<?php echo $article['ID']; ?>" class="button delete-article" onclick="return confirm('Estàs segur que vols esborrar aquest article?');">Esborrar</a>

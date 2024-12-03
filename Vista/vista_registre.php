@@ -31,7 +31,9 @@
         
         <button type="submit" class="button">Registrar-se</button>
     </form>
-    <a href="login.php" class="button">Tornar a l'inici de sessió</a>
+    
+    <a href="../Model/login.php" class="button">Tornar a l'inici de sessió</a>
+    <a href="../index.php" class="button">Tornar a l'inici</a>
 </div>
 
 </body>

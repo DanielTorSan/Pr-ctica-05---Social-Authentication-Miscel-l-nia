@@ -21,7 +21,7 @@ body {
 .navbar {
     width: 100%;
     background-color: rgba(0, 123, 255, 0.8);
-    padding: 10px 20px; /* Reduce el padding */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 60px; /* Reduce la altura */
+    height: 60px;
 }
 
 .navbar a {
@@ -51,16 +51,16 @@ body {
 
 /* Imagen de perfil en el header */
 .navbar .avatar {
-    width: 40px; /* Tamaño reducido */
+    width: 40px;
     height: 40px;
-    border-radius: 50%; /* Hace la imagen circular */
+    border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
 }
 
 /* Contenedor principal */
 .container {
-    margin-top: 80px; /* Para dejar espacio a la barra de navegación */
+    margin-top: 80px;
     width: 100%;
     max-width: 900px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -98,9 +98,9 @@ h1 {
     transition: all 0.3s ease-in-out;
     background-color: #fff;
     color: #333;
-    appearance: none; /* Eliminar el estilo por defecto del navegador */
-    -webkit-appearance: none; /* Eliminar el estilo por defecto en Safari */
-    -moz-appearance: none; /* Eliminar el estilo por defecto en Firefox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
@@ -113,7 +113,7 @@ h1 {
     outline: none;
 }
 
-/* Estilo para la barra de búsqueda */
+/* Formulario de búsqueda */
 .search-form {
     margin-bottom: 20px;
     text-align: right;
@@ -202,6 +202,12 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.article-actions .button:active {
+    background-color: #004494;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .article-actions .button.delete-article {
     background-color: #dc3545;
 }
@@ -226,7 +232,6 @@ h1 {
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pagination a:hover {
@@ -254,21 +259,21 @@ h1 {
 
 .insert-button-bottom {
     text-align: left;
-    margin-top: 40px; /* Añadir margen superior para separar del grupo de imágenes */
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
 .button.insert-article {
-    background-color: #007bff; /* Azul similar al navbar */
-    color: #fff; /* Texto blanco */
-    padding: 12px 25px; /* Espaciado más amplio */
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
     border: none;
-    border-radius: 30px; /* Bordes redondeados para un aspecto moderno */
+    border-radius: 30px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    transition: all 0.3s ease; /* Animación de transición suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     cursor: pointer;
     display: inline-block;
 }
@@ -304,11 +309,9 @@ h1 {
 
 /* Imagen en la sección Editar Perfil */
 .edit-profile-container .profile-image {
-    width: 150px; /* Tamaño de imagen en el perfil */
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Enmarcado circular */
+    border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #007bff; /* Añade borde azul */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
-    margin-bottom: 20px; /* Espaciado con el resto del contenido */
+    border: 5px solid #007bff;
 }
