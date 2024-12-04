@@ -9,7 +9,11 @@ Un sistema que permet la creació i administració d'usuaris, així com la inser
 
 ### Usuari Admin
 
-S'ha creat un usuari administrador que pot esborrar altres usuaris. Quan un usuari és esborrat, tots els seus articles associats també són esborrats. Aquesta decisió es va prendre per mantenir la integritat i seguretat de la base de dades, ja que els articles podrien contenir informació personal de l'usuari eliminat.
+S'ha creat un usuari administrador que pot esborrar altres usuaris i articles. Quan un usuari és esborrat, tots els seus articles associats també són esborrats. Aquesta decisió es va prendre per mantenir la integritat i seguretat de la base de dades, ja que els articles podrien contenir informació personal de l'usuari eliminat.
+
+#### Credencials de l'Administrador
+- **Nom d'usuari**: admin
+- **Contrasenya**: admin123
 
 ### Tecnologies Utilitzades
 
@@ -40,7 +44,7 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris. Quan un usua
 │   ├── esborrar.php # Controlador per eliminar articles
 │   ├── modificar.php # Controlador per modificar articles
 │   ├── update_profile.php # Controlador per actualitzar el perfil d'usuari
-│   ├── esborrar_usuari.php # Controlador per eliminar usuaris (només per a administradors)
+│   ├���─ esborrar_usuari.php # Controlador per eliminar usuaris (només per a administradors)
 │
 ├── Estils
 │   ├── estils.css # Fitxer CSS amb estils per al projecte
@@ -51,12 +55,16 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris. Quan un usua
 │   ├── reenviar_contrasenya.css # Fitxer CSS per a la pàgina de reenviar contrasenya
 │   ├── restablir_contrasenya.css # Fitxer CSS per a la pàgina de restablir contrasenya
 │
-├── PHPMailer # Carpeta per gestionar l'enviament de correus electrònics
-│   ├── Exception.php # Classe d'excepcions per PHPMailer
-│   ├── PHPMailer.php # Classe principal de PHPMailer
-│   └── SMTP.php # Classe per a la configuració SMTP
+├── Model
+│   ├── db_connection.php # Fitxer de connexió a la base de dades
+│   ├── id_manager.php # Funcions per gestionar i reajustar els IDs dels articles
+│   ├── login.php # Controlador per iniciar sessió
+│   ├── logout.php # Controlador per tancar sessió
+│   ├── register.php # Controlador per registrar un nou usuari
+│   ├── recover_password.php # Controlador per recuperar la contrasenya
+│   ├── reset_password.php # Controlador per restablir la contrasenya
 │
-├── Vista # Carpeta amb fitxers de vistes HTML per formularis i seccions estàtiques
+├── Vista
 │   ├── editar_perfil.php # Formulari HTML per editar el perfil d'usuari
 │   ├── inserir.php # Formulari HTML per inserir nous articles
 │   ├── login.php # Formulari d'inici de sessió
@@ -68,6 +76,7 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris. Quan un usua
 │   ├── vista_nova_contrasenya.php # Vista per recuperar contrasenya
 │   ├── vista_registre.php # Vista per registrar un nou usuari
 │   ├── vista_reset_password.php # Vista per restablir contrasenya
+│   ├── vista_usuaris.php # Vista per veure i eliminar usuaris (només per a administradors)
 │
-├── [index.php](http://_vscodecontentref_/3) # Pàgina principal del projecte
+├── [index.php](http://_vscodecontentref_/5) # Pàgina principal del projecte
 └── .htaccess # Fitxer de configuració del servidor

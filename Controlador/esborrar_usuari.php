@@ -20,24 +20,22 @@
             exit();
         }
 
-        // Obtenir la llista d'usuaris
-        $stmt = $pdo->prepare("SELECT id, username, email FROM usuaris WHERE role != 'admin'");
-        $stmt->execute();
-        $usuaris = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        ?>
+        // Verificar si s'ha passat un ID
+        if (isset($_GET['id'])) {
+            $id = (int)$_GET['id'];
 
-        <?php if (empty($usuaris)): ?>
-            <p>No hi ha usuaris per eliminar.</p>
-        <?php else: ?>
-            <ul>
-                <?php foreach ($usuaris as $usuari): ?>
-                    <li>
-                        <?php echo htmlspecialchars($usuari['username']); ?> (<?php echo htmlspecialchars($usuari['email']); ?>)
-                        <a href="../Controlador/esborrar_usuari.php?id=<?php echo $usuari['id']; ?>" class="button delete-user" onclick="return confirm('Estàs segur que vols esborrar aquest usuari?');">Esborrar</a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+            // Eliminar l'usuari de la base de dades
+            $stmt = $pdo->prepare("DELETE FROM usuaris WHERE id = ?");
+            if ($stmt->execute([$id])) {
+                echo "<p>Usuari esborrat correctament.</p>";
+            } else {
+                echo "<p>No s'ha pogut esborrar l'usuari.</p>";
+            }
+        } else {
+            echo "<p>ID no proporcionat.</p>";
+        }
+        ?>
+        <a href="../Vista/vista_usuaris.php" class="button">Tornar a la llista d'usuaris</a>
         <a href="../index.php" class="button">Tornar a l'Inici</a>
     </div>
 </body>

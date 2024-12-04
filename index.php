@@ -89,6 +89,9 @@ $searchNotFound = empty($articles) && $search;
             <span>Benvingut, <?php echo htmlspecialchars($usuari); ?></span>
             <a href="Vista/editar_perfil.php" class="button profile">Editar Perfil</a>
             <a href="Model/logout.php" class="button logout">Tancar Sessió</a>
+            <?php if ($isAdmin): ?>
+                <a href="Vista/vista_usuaris.php" class="button view-users">Veure Usuaris</a>
+            <?php endif; ?>
         <?php else: ?>
             <a href="Model/login.php" class="button login">Iniciar Sessió</a>
             <a href="Model/register.php" class="button register">Registrar-se</a>
