@@ -13,7 +13,8 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris i articles. Q
 
 #### Credencials de l'Administrador
 - **Nom d'usuari**: admin
-- **Contrasenya**: admin123
+- **Correu electrònic**: admin@gmail.com
+- **Contrasenya**: S0c@dmni
 
 ### Tecnologies Utilitzades
 
@@ -44,7 +45,7 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris i articles. Q
 │   ├── esborrar.php # Controlador per eliminar articles
 │   ├── modificar.php # Controlador per modificar articles
 │   ├── update_profile.php # Controlador per actualitzar el perfil d'usuari
-│   ├���─ esborrar_usuari.php # Controlador per eliminar usuaris (només per a administradors)
+│   ├── esborrar_usuari.php # Controlador per eliminar usuaris (només per a administradors)
 │
 ├── Estils
 │   ├── estils.css # Fitxer CSS amb estils per al projecte
@@ -78,5 +79,5 @@ S'ha creat un usuari administrador que pot esborrar altres usuaris i articles. Q
 │   ├── vista_reset_password.php # Vista per restablir contrasenya
 │   ├── vista_usuaris.php # Vista per veure i eliminar usuaris (només per a administradors)
 │
-├── [index.php](http://_vscodecontentref_/5) # Pàgina principal del projecte
+├── index.php # Pàgina principal del projecte
 └── .htaccess # Fitxer de configuració del servidor
