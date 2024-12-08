@@ -72,5 +72,30 @@
             <a href="../index.php" class="button">Tornar a l'Inici</a>
         </div>
     </div>
+
+    <script>
+        let inactivityTime = function () {
+            let time;
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.onclick = resetTimer;
+            document.onscroll = resetTimer;
+
+            function logout() {
+                fetch('../Model/activitat_usuari.php')
+                    .then(() => {
+                        window.location.href = '../Model/logout.php';
+                    });
+            }
+
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(logout, 2400000);  // 40 minutos
+            }
+        };
+
+        inactivityTime();
+    </script>
 </body>
 </html>

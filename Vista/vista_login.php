@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sessió</title>
     <link rel="stylesheet" href="../Vista/Estils/login_registre.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
 
         <!-- reCAPTCHA -->
         <?php if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] >= 3): ?>
-            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+            <div class="g-recaptcha" data-sitekey="6LdN55EqAAAAAE8FoR6rmXLn3lZA_S94AwUZo9Xa"></div>
         <?php endif; ?>
 
         <button type="submit" class="button">Iniciar Sessió</button>

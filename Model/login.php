@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar reCAPTCHA si hi ha 3 o més intents fallits
     if ($_SESSION['login_attempts'] >= 3) {
         $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
-        $recaptchaSecret = 'YOUR_SECRET_KEY'; // Substitueix per la teva clau secreta de reCAPTCHA
+        $recaptchaSecret = '6LdN55EqAAAAAOewoGgONwDz2RqmtlHP35gVznvi'; // Clau secreta de reCAPTCHA
         $recaptchaURL = 'https://www.google.com/recaptcha/api/siteverify';
 
         // Enviar la sol·licitud de verificació de reCAPTCHA
@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Establir una cookie amb el token
                 setcookie("remember_token", $token, time() + (86400 * 30), "/"); // Cookie de 30 dies
             } else {
+                // Eliminar la cookie si no es selecciona "Recorda'm"
                 setcookie("remember_token", "", time() - 3600, "/");
             }
 

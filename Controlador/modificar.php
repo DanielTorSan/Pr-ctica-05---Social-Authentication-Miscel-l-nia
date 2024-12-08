@@ -1,7 +1,7 @@
 <!-- Daniel Torres Sanchez -->
 <?php
 // Iniciar sessió
-session_start();
+require "../Model/activitat_usuari.php";
 
 // Habilitar el reporte d'errors
 error_reporting(E_ALL);
@@ -35,11 +35,6 @@ function modificarArticle($pdo, $id, $nou_cos, $nou_titol, $nova_imatge) {
         $imatgeTmpPath = $nova_imatge['tmp_name'];
         $imatgeName = basename($nova_imatge['name']);
         $imatgePath = "../uploads/" . $imatgeName;
-
-        // Moure la nova imatge a la carpeta de càrregues
-        move_uploaded_file($imatgeTmpPath, $imatgePath);
-
-        // Actualitzar la ruta de la imatge a la base de dades
         $stmt = $pdo->prepare("UPDATE articles SET imatge = ? WHERE ID = ?");
         $stmt->execute([$imatgePath, $id]);
     }
@@ -64,3 +59,28 @@ if (isset($_GET['id'])) {
 // Incloure la vista per mostrar el formulari
 include "../Vista/vista_modificar.php";
 ?>
+
+<script>
+    let inactivityTime = function () {
+        let time;
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+        document.onclick = resetTimer;
+        document.onscroll = resetTimer;
+
+        function logout() {
+            fetch('../Model/activitat_usuari.php')
+                .then(() => {
+                    window.location.href = '../Model/logout.php';
+                });
+        }
+
+        function resetTimer() {
+            clearTimeout(time);
+            time = setTimeout(logout, 2400000);  // 40 minutos
+        }
+    };
+
+    inactivityTime();
+</script>

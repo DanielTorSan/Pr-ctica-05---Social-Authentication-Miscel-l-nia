@@ -10,21 +10,9 @@
 <body>
 
 <?php
-session_start();
+require "Model/activitat_usuari.php";
 require "Model/db_connection.php";
 require "Model/id_manager.php";
-
-$inactivitat_maxima = 2400;
-if (isset($_SESSION['last_activity'])) {
-    $inactivitat = time() - $_SESSION['last_activity'];
-    if ($inactivitat > $inactivitat_maxima) {
-        session_unset();
-        session_destroy();
-        header("Location: index.php");
-        exit();
-    }
-}
-$_SESSION['last_activity'] = time();
 
 $loggedIn = isset($_SESSION['user']);
 $usuari = $loggedIn ? $_SESSION['user'] : null;
@@ -173,6 +161,31 @@ $searchNotFound = empty($articles) && $search;
         });
     </script>
 <?php endif; ?>
+
+<script>
+    let inactivityTime = function () {
+        let time;
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+        document.onclick = resetTimer;
+        document.onscroll = resetTimer;
+
+        function logout() {
+            fetch('Model/activitat_usuari.php')
+                .then(() => {
+                    window.location.href = 'Model/logout.php';
+                });
+        }
+
+        function resetTimer() {
+            clearTimeout(time);
+            time = setTimeout(logout, 2400000);  // 40 minutos
+        }
+    };
+
+    inactivityTime();
+</script>
 
 </body>
 </html>
