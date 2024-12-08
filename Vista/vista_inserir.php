@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserir Article</title>
     <link rel="stylesheet" href="../Vista/Estils/inserir.css">
-    <link rel="stylesheet" href="../Vista/Estils/reenviar_contrasenya.css">
 </head>
 <body>
     <div class="container">
@@ -28,7 +27,7 @@
                 <label for="imatge">Imatge:</label>
                 <input type="file" name="imatge" id="imatge" accept="image/*" required>
                 
-                <button type="submit" class="button">Inserir Article</button>
+                <button type="submit" class="submit-button">Inserir Article</button>
             </form>
             <a href="../index.php" class="button">Tornar a l'Inici</a>
         </div>
