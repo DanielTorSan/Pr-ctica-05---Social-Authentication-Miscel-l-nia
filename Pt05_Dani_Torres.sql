@@ -1,22 +1,26 @@
--- Crear la base de datos
 CREATE DATABASE pt05_dani_torres;
 USE pt05_dani_torres;
 
--- Crear la tabla articles
+-- Crear la tabla "articles"
 CREATE TABLE articles (
     ID INT PRIMARY KEY AUTO_INCREMENT,
-    DNI VARCHAR(50) UNIQUE,
-    titol VARCHAR(255),
-    cos TEXT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    cos TEXT NULL,
+    created_by INT,
+    data_creacio DATETIME DEFAULT CURRENT_TIMESTAMP NULL,
+    imatge VARCHAR(255) NULL,
+    titol VARCHAR(255) NULL
+);
 
--- Crear la tabla usuaris
+-- Crear la tabla "usuaris"
 CREATE TABLE usuaris (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    avatar VARCHAR(255) NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    email VARCHAR(255) UNIQUE,
-    reset_token VARCHAR(255) DEFAULT NULL,
-    reset_expiration DATETIME DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    remember_token VARCHAR(255) NULL,
+    reset_expiration DATETIME NULL,
+    reset_token VARCHAR(255) NULL,
+    role ENUM('user') NULL,
+    username VARCHAR(255) NOT NULL UNIQUE
+);
